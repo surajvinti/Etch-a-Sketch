@@ -13,6 +13,8 @@ body {
     max-width: 600px;
     aspect-ratio: 1;
     margin: 10px;
+    box-sizing: border-box;
+    border: 1px solid black;
 }
 
 .grid-Divs {

@@ -18,15 +18,29 @@ function createGrid(gridSize) {
         newDiv.className = `grid-Divs`;
         newDiv.style.flex = `1 0 calc(100% / ${gridSize})`;
         container.appendChild(newDiv);
-    }   
+    }
+
+    const gridDivs = document.querySelectorAll(".grid-Divs");
+
+    gridDivs.forEach((div) => {
+        div.style.opacity = "0"; // Start fully transparent (or no darkening)
+    
+        div.addEventListener("mouseover", () => {
+            let currentOpacity = parseFloat(div.style.opacity); // Get current opacity or default to 0
+            currentOpacity = currentOpacity + 0.1; // Increment by 0.1 but cap at 1
+            div.style.opacity = currentOpacity; // Update opacity
+        });
+
+        //Add hover effect to the container
+        container.addEventListener("mouseover", (event) => {
+            if (event.target.classList.contains("grid-Divs")) {
+                event.target.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)},
+                ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+            }
+        });
+    });
 }
 
-//Add hover effect to the container
-container.addEventListener("mouseover", (event) => {
-    if (event.target.classList.contains("grid-Divs")) {
-        event.target.style.backgroundColor = "black";
-    }
-});
 
 //Prompt user to input desired size of each side of the grid from 1-100
 btn.addEventListener("click", () => {
