@@ -17,24 +17,6 @@ body {
 
 .grid-Divs {
     display: flex;
-    flex: 1 0 calc(100% / 16);
-    aspect-ratio: 1;
-    box-sizing: border-box;
-    border: 1px solid black;
-    cursor: pointer;
-}
-
-.newContainer {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 600px;
-    aspect-ratio: 1;
-    margin: 10px;
-}
-
-.new-Grid-Divs {
-    display: flex;
     aspect-ratio: 1;
     box-sizing: border-box;
     border: 1px solid black;
