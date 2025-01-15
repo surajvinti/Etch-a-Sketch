@@ -30,17 +30,17 @@ function createGrid(gridSize) {
             currentOpacity = currentOpacity + 0.1; // Increment by 0.1 but cap at 1
             div.style.opacity = currentOpacity; // Update opacity
         });
-
-        //Add hover effect to the container
-        container.addEventListener("mouseover", (event) => {
-            if (event.target.classList.contains("grid-Divs")) {
-                event.target.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)},
-                ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
-            }
-        });
     });
 }
 
+
+//Add hover effect to the container
+container.addEventListener("mouseover", (event) => {
+    if (event.target.classList.contains("grid-Divs")) {
+        event.target.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)},
+         ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+    }
+});
 
 //Prompt user to input desired size of each side of the grid from 1-100
 btn.addEventListener("click", () => {
